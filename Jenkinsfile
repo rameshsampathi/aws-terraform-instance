@@ -3,12 +3,6 @@ pipeline {
     tools {
         terraform 'Terraform'
     }
-    stages{
-        stage('Clone Repo'){
-            steps{
-                sh 'https://github.com/rameshsampathi/terraformsingleinstance.git'
-            }
-        }
         stage('terraform init'){
             steps{
                 sh 'terraform init'
@@ -28,7 +22,10 @@ pipeline {
             steps{
                 sh 'terraform destroy  --auto-approve' 
                 sleep 20
-            }
-        }        
-    }
-}                       
+        }
+    } 
+}    
+    
+    
+    
+    
